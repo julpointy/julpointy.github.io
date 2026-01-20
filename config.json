@@ -8,11 +8,11 @@
   },
   "site": {
     "title": "julpointy",
-    "description": "Developer Portfolio",
+    "description": "Robotics Engineer Portfolio",
     "seo": {
-      "title": "julpointy - Developer Portfolio",
-      "description": "Developer Portfolio of julpointy",
-      "keywords": "developer, portfolio, github",
+      "title": "julpointy - Robotics Engineer Portfolio",
+      "description": "Robotics Engineer Portfolio of julpointy",
+      "keywords": "robotics, engineer, portfolio, github",
       "author": "julpointy",
       "og_image": "https://avatars.githubusercontent.com/julpointy",
       "twitter_card": "summary_large_image",
@@ -20,8 +20,8 @@
     }
   },
   "header": {
-    "greeting": "julpointy",
-    "tagline": "Developer and Creator."
+    "greeting": "Julian Poindexter",
+    "tagline": "Robotics Engineer"
   },
   "social_links": [
     {
@@ -34,7 +34,7 @@
   "github_username": "julpointy",
   "about": {
     "paragraphs": [
-      "Welcome to my portfolio! I'm passionate about creating amazing digital experiences and solving complex problems through code.",
+      "Welcome to my portfolio! I'm a Robotics Engineer with experience in robot control and perception using machine learning, and integrating electro mechanical systems with software.",
       "This portfolio showcases my journey, projects, and skills. Feel free to explore and get in touch if you'd like to collaborate!"
     ]
   },
