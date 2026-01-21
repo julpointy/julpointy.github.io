@@ -4,7 +4,7 @@
     "projects": true,
     "experience": true,
     "skills": true,
-    "github_projects": true
+    "github_projects": false
   },
   "site": {
     "title": "julpointy",
@@ -42,19 +42,36 @@
     "title": "Featured Projects",
     "items": [
       {
-        "name": "Portfolio Website",
-        "date": "January 20, 2026",
+        "name": "Mobile Robot Modular Gripper",
+        "date": "Ausust-May 2023",
         "description": [
-          "A modern, responsive portfolio website built with vanilla JavaScript",
-          "Features dark/light mode, dynamic content loading, and GitHub integration",
-          "Fully configurable through JSON with automated README generation"
+          "A modular gripper attachment to the KheperaIV mobile robot.",
+          "Features the ability to rotate 360 degrees continuously, force sensing gripper, and modularity allowing attachment of additional sensors.",
+          "Designed mechanical components in CAD, created PCB's, programmed firmware in C, and manufactured multiple modules.",
+          "Skills used: KiCAD, SolidWorks, 3d printing, PCB assembly, C/C++"
         ],
         "picture": "assets/projects/Placeholder.png",
         "link": {
-          "url": "https://julpointy.github.io",
-          "title": "View Live Site"
+          "url": "https://digital.wpi.edu/concern/student_works/rj430800b?locale=en",
+          "title": "Project Paper"
+        }
+      },
+      {
+        "name": "Interative LED Anotomical Heart",
+        "date": "March-May 2022",
+        "description": [
+          "An illuminated anotomical human heart that lights up in different colors and patterns based on its orientation.",
+          "Modeled and printed exterior to house the micro-controller and LEDs.",
+          "Uses an IMU to send acceleration readings to an ESP32. Readings are passed through a low pass filter from which the rotation of the heart is calculated.",
+          "Skills used: Solidworks, Arduino, Blender, C/C++"
+        ],
+        "picture": "assets/projects/Placeholder.png",
+        "link": {
+          "url": "https://digital.wpi.edu/concern/student_works/rj430800b?locale=en",
+          "title": "Demo Video"
         }
       }
+      
     ]
   },
   "experience": {
