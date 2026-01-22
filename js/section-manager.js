@@ -154,13 +154,17 @@ export class SectionManager {
             </div>
             ${project.pictures?.length ? `
             <div class="project-image-carousel">
+                <div class="carousel-track">
+                    <img 
+                        src="${project.pictures[0]}" 
+                        class="active"
+                        data-index="0"
+                        alt="${project.name}"
+                        loading="lazy"
+                    >
+                </div>
+
                 <button class="carousel-btn prev">‹</button>
-                <img 
-                    src="${project.pictures[0]}" 
-                    data-index="0"
-                    alt="${project.name} screenshot"
-                    loading="lazy"
-                >
                 <button class="carousel-btn next">›</button>
             </div>
             ` : ''}
@@ -173,28 +177,68 @@ export class SectionManager {
         });
 
         const carousel = projectItem.querySelector('.project-image-carousel');
+
         if (carousel) {
-            const img = carousel.querySelector('img');
+            const track = carousel.querySelector('.carousel-track');
             const prev = carousel.querySelector('.prev');
             const next = carousel.querySelector('.next');
             const pictures = project.pictures;
 
-            prev.addEventListener('click', (e) => {
-                e.stopPropagation();
-                let index = Number(img.dataset.index);
-                index = (index - 1 + pictures.length) % pictures.length;
-                img.src = pictures[index];
-                img.dataset.index = index;
-            });
+            let index = 0;
+            let isAnimating = false;
+
+            function slide(direction) {
+                if (isAnimating) return;
+                isAnimating = true;
+
+                const currentImg = track.querySelector('img.active');
+                let newIndex =
+                    direction === 'next'
+                        ? (index + 1) % pictures.length
+                        : (index - 1 + pictures.length) % pictures.length;
+
+                const newImg = document.createElement('img');
+                newImg.src = pictures[newIndex];
+
+                newImg.classList.add(
+                    direction === 'next'
+                        ? 'slide-in-right'
+                        : 'slide-in-left'
+                );
+
+                track.appendChild(newImg);
+
+                // Force browser layout
+                newImg.offsetWidth;
+
+                currentImg.classList.remove('active');
+                currentImg.classList.add(
+                    direction === 'next'
+                        ? 'slide-out-left'
+                        : 'slide-out-right'
+                );
+
+                newImg.classList.remove('slide-in-right', 'slide-in-left');
+                newImg.classList.add('active');
+
+                setTimeout(() => {
+                    currentImg.remove();
+                    index = newIndex;
+                    isAnimating = false;
+                }, 450);
+            }
 
             next.addEventListener('click', (e) => {
                 e.stopPropagation();
-                let index = Number(img.dataset.index);
-                index = (index + 1) % pictures.length;
-                img.src = pictures[index];
-                img.dataset.index = index;
+                slide('next');
+            });
+
+            prev.addEventListener('click', (e) => {
+                e.stopPropagation();
+                slide('prev');
             });
         }
+
 
         
         return projectItem;
