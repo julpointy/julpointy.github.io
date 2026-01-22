@@ -354,18 +354,20 @@
 }
 
 .carousel-track {
-    position: relative;
-    width: 100%;
-    height: auto;
+    display: flex;
+    flex-direction: row;
+    transition: transform 0.45s ease;
 }
 
 .carousel-track img {
     width: 100%;
+    height: auto;
     border-radius: 12px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: transform 0.45s ease, opacity 0.45s ease;
+
+    /* critical for sliding */
+    position: static;
+    flex-shrink: 0;
+    display: block;
 }
 
 .carousel-track img.active {
