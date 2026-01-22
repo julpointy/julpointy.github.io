@@ -50,8 +50,12 @@
           "Designed mechanical components in CAD, created PCB's, programmed firmware in C, and manufactured multiple modules.",
           "Skills used: KiCAD, SolidWorks, 3d printing, PCB assembly, C/C++"
         ],
-        "pictures": [ "assets/projects/Placeholder.png",
-                      "assets/projects/Screenshot 2023-04-11 204950.png"
+        "pictures": [ "assets/projects/Screenshot 2026-01-22 144232.png",
+                      "assets/projects/Screenshot 2026-01-22 144728.png",
+                      "assets/projects/Screenshot 2023-04-11 204950.png",
+                      "assets/projects/Screenshot 2023-04-18 184402.png",
+                      "assets/projects/Screenshot 2026-01-22 144417.png",
+                      "assets/projects/Screenshot 2026-01-22 144314.png"
       ],
         "link": {
           "url": "https://digital.wpi.edu/concern/student_works/rj430800b?locale=en",
@@ -67,8 +71,9 @@
           "Uses an IMU to send acceleration readings to an ESP32. Readings are passed through a low pass filter from which the rotation of the heart is calculated.",
           "Skills used: Solidworks, Arduino, Blender, C/C++"
         ],
-        "pictures": [ "assets/projects/Placeholder.png",
-                      "assets/projects/Placeholder.png"
+        "pictures": [ "assets/projects/IMG-8338.jpeg",
+                      "assets/projects/IMG-8337.jpeg",
+                      "assets/projects/IMG-8333.jpeg"
       ],
         "link": {
           "url": "https://digital.wpi.edu/concern/student_works/rj430800b?locale=en",
