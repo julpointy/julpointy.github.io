@@ -155,13 +155,9 @@ export class SectionManager {
             ${project.pictures?.length ? `
             <div class="project-image-carousel">
                 <div class="carousel-track">
-                    <img 
-                        src="${project.pictures[0]}" 
-                        class="active"
-                        data-index="0"
-                        alt="${project.name}"
-                        loading="lazy"
-                    >
+                    ${project.pictures.map(src =>
+                        `<img src="${src}" />`
+                    ).join('')}
                 </div>
 
                 <button class="carousel-btn prev">‹</button>
@@ -182,64 +178,26 @@ export class SectionManager {
             const track = carousel.querySelector('.carousel-track');
             const prev = carousel.querySelector('.prev');
             const next = carousel.querySelector('.next');
-            const pictures = project.pictures;
+            const slides = track.querySelectorAll('img');
 
             let index = 0;
-            let isAnimating = false;
 
-            function slide(direction) {
-                if (isAnimating) return;
-                isAnimating = true;
-
-                const currentImg = track.querySelector('img.active');
-                let newIndex =
-                    direction === 'next'
-                        ? (index + 1) % pictures.length
-                        : (index - 1 + pictures.length) % pictures.length;
-
-                const newImg = document.createElement('img');
-                newImg.src = pictures[newIndex];
-
-                newImg.classList.add(
-                    direction === 'next'
-                        ? 'slide-in-right'
-                        : 'slide-in-left'
-                );
-
-                track.appendChild(newImg);
-
-                // Force browser layout
-                newImg.offsetWidth;
-
-                currentImg.classList.remove('active');
-                currentImg.classList.add(
-                    direction === 'next'
-                        ? 'slide-out-left'
-                        : 'slide-out-right'
-                );
-
-                newImg.classList.remove('slide-in-right', 'slide-in-left');
-                newImg.classList.add('active');
-
-                setTimeout(() => {
-                    currentImg.remove();
-                    index = newIndex;
-                    isAnimating = false;
-                }, 450);
+            function updateSlide() {
+                track.style.transform = `translateX(-${index * 100}%)`;
             }
 
             next.addEventListener('click', (e) => {
                 e.stopPropagation();
-                slide('next');
+                index = (index + 1) % slides.length;
+                updateSlide();
             });
 
             prev.addEventListener('click', (e) => {
                 e.stopPropagation();
-                slide('prev');
+                index = (index - 1 + slides.length) % slides.length;
+                updateSlide();
             });
         }
-
-
         
         return projectItem;
     }
