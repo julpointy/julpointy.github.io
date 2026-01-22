@@ -301,3 +301,44 @@
     transform: translateY(-2px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
 }
+
+.project-image-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    margin: 1rem auto;
+}
+
+.project-image-carousel img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+.carousel-btn:hover {
+    background: rgba(0,0,0,0.8);
+}
+

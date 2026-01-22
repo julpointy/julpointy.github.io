@@ -152,9 +152,16 @@ export class SectionManager {
                 </div>
                 ` : ''}
             </div>
-            ${project.picture ? `
-            <div class="project-image">
-                <img src="${project.picture}" alt="${project.name} project screenshot" loading="lazy">
+            ${project.pictures?.length ? `
+            <div class="project-image-carousel">
+                <button class="carousel-btn prev">‹</button>
+                <img 
+                    src="${project.pictures[0]}" 
+                    data-index="0"
+                    alt="${project.name} screenshot"
+                    loading="lazy"
+                >
+                <button class="carousel-btn next">›</button>
             </div>
             ` : ''}
         `;
@@ -164,6 +171,31 @@ export class SectionManager {
         header.addEventListener('click', () => {
             this.toggleProjectAccordion(projectItem);
         });
+
+        const carousel = projectItem.querySelector('.project-image-carousel');
+        if (carousel) {
+            const img = carousel.querySelector('img');
+            const prev = carousel.querySelector('.prev');
+            const next = carousel.querySelector('.next');
+            const pictures = project.pictures;
+
+            prev.addEventListener('click', (e) => {
+                e.stopPropagation();
+                let index = Number(img.dataset.index);
+                index = (index - 1 + pictures.length) % pictures.length;
+                img.src = pictures[index];
+                img.dataset.index = index;
+            });
+
+            next.addEventListener('click', (e) => {
+                e.stopPropagation();
+                let index = Number(img.dataset.index);
+                index = (index + 1) % pictures.length;
+                img.src = pictures[index];
+                img.dataset.index = index;
+            });
+        }
+
         
         return projectItem;
     }
