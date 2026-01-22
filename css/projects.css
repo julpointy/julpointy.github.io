@@ -317,4 +317,32 @@
     display: block;
 }
 
+.carousel-track img.active {
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 2;
+}
+
+.carousel-track img.slide-in-right {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 3;
+}
+
+.carousel-track img.slide-in-left {
+    transform: translateX(-100%);
+    opacity: 1;
+    z-index: 3;
+}
+
+.carousel-track img.slide-out-left {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.carousel-track img.slide-out-right {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
 
