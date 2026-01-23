@@ -43,7 +43,7 @@
     "items": [
       {
         "name": "Mobile Robot Modular Gripper",
-        "date": "Ausust-May 2023",
+        "date": "August-May 2023",
         "description": [
           "A modular gripper attachment to the KheperaIV mobile robot.",
           "Features the ability to rotate 360 degrees continuously, force sensing gripper, and modularity allowing attachment of additional sensors.",
@@ -53,7 +53,6 @@
         "pictures": [ "assets/projects/Screenshot 2026-01-22 144232.png",
                       "assets/projects/Screenshot 2026-01-22 144728.png",
                       "assets/projects/Screenshot 2023-04-11 204950.png",
-                      "assets/projects/Screenshot 2023-04-18 184402.png",
                       "assets/projects/Screenshot 2026-01-22 144417.png",
                       "assets/projects/Screenshot 2026-01-22 144314.png"
       ],
@@ -84,20 +83,32 @@
     ]
   },
   "experience": {
-    "title": "Professional Experience",
+    "title": "Professional Experience Highlights",
     "jobs": [
       {
-        "company": "Your Company Name",
-        "role": "Your Job Title",
-        "date": "Start Date - Present",
+        "company": "Amazon Robotics",
+        "role": "Software Development Engineer",
+        "date": "March - August 2025",
         "responsibilities": [
-          "Add your key responsibilities and achievements here",
-          "Include specific technologies you worked with",
-          "Mention any notable projects or impact metrics",
-          "Update this section with your actual work experience"
+          "Built framework for evaluating performance of machine learning models using robot manipulation video data",
+          "Utilized and implemented cutting edge deep learning vision models (V-JEPA, SAM) for robot monitoring",
+          "Applied video embedding models for similarity search",
+          "Explored computer vision techniques for motion planning on 6-DOF robot arm"
         ],
-        "logo": "assets/logos/Placeholder_Logo.png",
-        "logo_dark": "assets/logos/Placeholder_Logo.png"
+        "logo": "assets/logos/amazon_robotics_logo.png",
+        "logo_dark": "assets/logos/amazon_robotics_logo.png"
+      },
+      {
+        "company": "Artaic",
+        "role": "Manufacturing Engineer",
+        "date": "December - Febuary 2025",
+        "responsibilities": [
+          "Designed and implemented full-stack software architecture to dynamically control camera/lighting hardware systems",
+          "Took framework from prototype, to testing, to manufacturing deployment",
+          "Displayed strong debugging skills during manufacturing testing and integration"
+        ],
+        "logo": "assets/logos/artaic-logo.png",
+        "logo_dark": "assets/logos/artaic-logo.png"
       }
     ]
   },
@@ -107,29 +118,26 @@
       {
         "name": "Programming Languages & Technologies",
         "items": [
-          "JavaScript",
+          "C/C++",
           "Python",
           "Java",
-          "TypeScript"
+          "CAD",
+          "PCB Design",
+          "Hardware integration"
         ]
       },
       {
         "name": "Tools & Platforms",
         "items": [
-          "Git",
-          "GitHub",
+          "SolidWorks",
+          "OnShape",
           "VS Code",
-          "Docker"
-        ]
-      },
-      {
-        "name": "Certifications",
-        "items": [
-          {
-            "name": "Add your certification name here",
-            "url": "https://example.com/your-certification-link"
-          },
-          "You can also add certifications without links"
+          "Docker",
+          "KiCAD",
+          "ROS",
+          "SLAM",
+          "SAM",
+          "DINO"
         ]
       }
     ]
